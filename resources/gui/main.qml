@@ -1,68 +1,36 @@
 import QtQuick 2.0
+import QtQuick.Controls 1.0
 
 Rectangle {
-    width: 800
-    height: 600
+    width: 360
+    height: 360
+    color: "grey"
 
-    Image {
-        id: image1
+    TextArea {
+        id: textArea
+        x: 8
+        y: 74
+        width: 344
+        height: 278
+    }
+
+    ExampleButton {
+        id: loadButton
         x: 8
         y: 8
-        width: 100
-        height: 100
-        source: "../images/icon.png"
+        text: "Load"
+        onClicked: {
+            console.log("Load")
+        }
     }
 
-    Text {
-        id: welcomeText
-        x: 114
+    ExampleButton {
+        id: saveButton
+        x: 140
         y: 8
-        width: 678
-        height: 100
-        color: "#1a0505"
-        text: qsTr("Hello World!")
-        font.bold: true
-        font.family: "Arial"
-        font.pixelSize: 30
-    }
-
-    Row {
-        id: row1
-        x: 8
-        y: 114
-        width: 784
-        height: 104
-    }
-
-    TextEdit {
-        id: textEdit1
-        x: 8
-        y: 114
-        width: 784
-        height: 104
-        text: qsTr("Text Edit")
-        font.pixelSize: 12
-    }
-
-    Rectangle {
-        id: rectangle1
-        x: 8
-        y: 224
-        width: 124
-        height: 28
-        color: "#401616"
-    }
-
-    Text {
-        id: text1
-        x: 8
-        y: 224
-        width: 124
-        height: 28
-        color: "#d6c0c0"
-        text: qsTr("Button")
-        styleColor: "#c97a7a"
-        font.pixelSize: 12
+        text: "Save"
+        onClicked: {
+            console.log("Save")
+        }
     }
 }
-
